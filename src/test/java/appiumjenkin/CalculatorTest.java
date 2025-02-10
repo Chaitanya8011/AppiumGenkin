@@ -1,4 +1,6 @@
-package com.example;
+package appiumjenkin;
+
+
 import static org.junit.Assert.assertEquals;
 
 import java.net.MalformedURLException;
@@ -23,7 +25,7 @@ public class CalculatorTest {
     public void setUp() throws MalformedURLException {
     	 DesiredCapabilities caps = new DesiredCapabilities();
          caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "motorola motorola edge 50 fusion");
+         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "vivo V2334");
          caps.setCapability("appPackage", "com.example.calculatorapp");
          caps.setCapability("appActivity", "com.example.calculatorapp.MainActivity");
          caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
@@ -48,8 +50,8 @@ public class CalculatorTest {
        WebElement resultView = driver.findElement(By.id("com.example.calculatorapp:id/tvResult"));
         // Assert the result
         String resultText = resultView.getText();
+        System.out.println(resultText);
         assertEquals("Result: 8.0", resultText);
-        System.out.println("result sucees");
     }
  
     @After
