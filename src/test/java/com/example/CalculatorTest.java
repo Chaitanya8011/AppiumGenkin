@@ -23,7 +23,7 @@ public class CalculatorTest {
     public void setUp() throws MalformedURLException {
     	 DesiredCapabilities caps = new DesiredCapabilities();
          caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "motorola moto g85 5G");
+         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "motorola motorola edge 50 fusion");
          caps.setCapability("appPackage", "com.example.calculatorapp");
          caps.setCapability("appActivity", "com.example.calculatorapp.MainActivity");
          caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
@@ -48,7 +48,8 @@ public class CalculatorTest {
        WebElement resultView = driver.findElement(By.id("com.example.calculatorapp:id/tvResult"));
         // Assert the result
         String resultText = resultView.getText();
-        assertEquals("Result :8.0", resultText);
+        assertEquals("Result: 8.0", resultText);
+        System.out.println("result sucees");
     }
  
     @After
